@@ -1,6 +1,4 @@
-"use client";
-
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useCallback } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { CardItem } from "../types";
 
@@ -18,24 +16,24 @@ const ScrollableCardSection: React.FC<ScrollableCardSectionProps> = ({
   const [scrollPosition, setScrollPosition] = useState<number>(0);
   const containerRef = useRef<HTMLDivElement>(null);
 
-  const scroll = (direction: "left" | "right") => {
+  const scroll = useCallback((direction: "left" | "right") => {
     if (containerRef.current) {
       const scrollAmount = direction === "left" ? -220 : 220;
       containerRef.current.scrollBy({ left: scrollAmount, behavior: "smooth" });
-      setScrollPosition(containerRef.current.scrollLeft + scrollAmount);
+      setScrollPosition((prev) => prev + scrollAmount);
     }
-  };
+  }, []);
 
   useEffect(() => {
+    const currentRef = containerRef.current;
     const handleScroll = () => {
-      if (containerRef.current) {
-        setScrollPosition(containerRef.current.scrollLeft);
+      if (currentRef) {
+        setScrollPosition(currentRef.scrollLeft);
       }
     };
 
-    containerRef.current?.addEventListener("scroll", handleScroll);
-    return () =>
-      containerRef.current?.removeEventListener("scroll", handleScroll);
+    currentRef?.addEventListener("scroll", handleScroll);
+    return () => currentRef?.removeEventListener("scroll", handleScroll);
   }, []);
 
   const pairedItems = items.reduce<CardItem[][]>((result, item, index) => {
