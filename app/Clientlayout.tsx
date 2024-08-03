@@ -17,22 +17,22 @@ export default function ClientLayout({
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   return (
-    <div className="flex flex-col min-h-screen bg-black text-white">
-      <Header toggleMenu={toggleMenu} />
-      <HamburgerMenu
-        isOpen={isMenuOpen}
-        toggleMenu={toggleMenu}
-        menuItems={menuItems}
-      />
+    <div className="flex flex-col">
       <ThemeProvider
         attribute="class"
         defaultTheme="dark"
         enableSystem
         disableTransitionOnChange
       >
+        <Header menuItems={menuItems} />
+        <HamburgerMenu
+          isOpen={isMenuOpen}
+          toggleMenu={toggleMenu}
+          menuItems={menuItems}
+        />
         {children}
+        <Footer menuItems={menuItems} menuLinks={menuLinks} />
       </ThemeProvider>
-      <Footer menuItems={menuItems} menuLinks={menuLinks} />
     </div>
   );
 }

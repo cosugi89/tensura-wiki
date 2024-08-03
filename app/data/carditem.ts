@@ -1,4 +1,4 @@
-import { CardItem } from "./../types/index";
+import { CardItem, ScrollableCardSectionProps } from "./../types/index";
 
 export const characterItems: CardItem[] = [
   {
@@ -82,4 +82,25 @@ export const magicItems: CardItem[] = [
   { name: "解析", description: "対象の能力や弱点を詳細に分析する情報収集魔法" },
   { name: "解析", description: "対象の能力や弱点を詳細に分析する情報収集魔法" },
   // ... other magic items
+];
+
+export const ScrollableCardSection: ScrollableCardSectionProps[] = [
+  {
+    title: "Characters",
+    items: characterItems,
+    allLink: "/all-characters",
+    color: "bg-blue-500",
+  },
+  {
+    title: "Skills",
+    items: skillItems,
+    allLink: "/all-skills",
+    color: "bg-red-500",
+  },
+  {
+    title: "Magic",
+    items: magicItems,
+    allLink: "/all-magic",
+    color: "bg-yellow-500",
+  },
 ];

@@ -9,6 +9,16 @@ export const menuItems: MenuItem[] = [
 ];
 
 export const menuLinks: MenuLink[] = [
-  { name: "YouTube", link: "https://www.youtube.com/@co_sugi" },
-  { name: "Twitter", link: "https://x.com/CO_sugi_" },
+  {
+    name: "YouTube",
+    link: "https://www.youtube.com/@co_sugi",
+    icon: "public/youtube_icon.svg",
+    dark: "public/youtube_icon_dark.svg",
+  },
+  {
+    name: "Twitter",
+    link: "https://x.com/CO_sugi_",
+    icon: "public/x_icon.svg",
+    dark: "public/x_icon_dark.svg",
+  },
 ];
