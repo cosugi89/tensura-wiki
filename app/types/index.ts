@@ -3,6 +3,11 @@ export interface MenuItem {
   link: string;
 }
 
+export interface MenuLink {
+  name: String;
+  link: string;
+}
+
 export interface CardItem {
   name: string;
   description: string;
