@@ -1,7 +1,6 @@
 import React from "react";
 import { MenuItem, MenuLink } from "../types";
 import { Button } from "@/components/ui/button";
-import { Link as LucideLink } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 

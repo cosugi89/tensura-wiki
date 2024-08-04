@@ -20,7 +20,7 @@ const Header: React.FC<HeaderProps> = ({ menuItems }) => {
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 p-4 flex justify-between items-center border-b border-ring bg-background z-20">
+      <header className="fixed top-0 left-0 right-0 p-4 flex justify-between items-center border-b  bg-background z-20">
         <Button onClick={toggleMenu} variant="ghost">
           {isMenuOpen ? <X size={32} /> : <Menu size={32} />}
         </Button>

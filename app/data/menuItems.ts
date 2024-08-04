@@ -2,7 +2,7 @@ import { MenuItem } from "../types";
 import { MenuLink } from "../types";
 
 export const menuItems: MenuItem[] = [
-  { name: "GLOSSARY", link: "/library" },
+  { name: "GLOSSARY", link: "/glossary" },
   { name: "ARTICLES", link: "/article" },
   { name: "QUIZ", link: "/quiz" },
   { name: "ABOUT", link: "/about" },
