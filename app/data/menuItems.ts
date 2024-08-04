@@ -12,13 +12,13 @@ export const menuLinks: MenuLink[] = [
   {
     name: "YouTube",
     link: "https://www.youtube.com/@co_sugi",
-    icon: "public/youtube_icon.svg",
-    dark: "public/youtube_icon_dark.svg",
+    icon: "/youtube_icon_dark.svg",
+    dark: "/youtube_icon.svg",
   },
   {
     name: "Twitter",
     link: "https://x.com/CO_sugi_",
-    icon: "public/x_icon.svg",
-    dark: "public/x_icon_dark.svg",
+    icon: "/x_icon_dark.svg",
+    dark: "/x_icon_dark.svg",
   },
 ];

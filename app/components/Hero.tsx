@@ -5,12 +5,19 @@ const HeroSection: React.FC = () => (
   <section className="relative w-full">
     <div className=" aspect-[6/7]">
       <Image
-        src="https://pbs.twimg.com/media/Fq838YwaMAEmnC7?format=jpg&name=large"
+        src="/rimuru.png"
         alt=""
         layout="fill"
         objectFit="cover"
         priority
       ></Image>
+      <div
+        className="absolute inset-0"
+        style={{
+          background:
+            "linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.5) 30%, rgba(0,0,0,0) 50%)",
+        }}
+      ></div>
     </div>
 
     <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">

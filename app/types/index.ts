@@ -10,14 +10,29 @@ export interface MenuLink {
   dark: string;
 }
 
-export interface CardItem {
+export interface BaseCardItem {
   name: string;
   description: string;
 }
 
+export interface CharacterItem extends BaseCardItem {
+  race?: string;
+  abilities?: string[];
+}
+
+export interface SkillItem extends BaseCardItem {
+  category?: "active" | "passive";
+  cooldown?: number;
+}
+
+export interface MagicItem extends BaseCardItem {
+  element?: "fire" | "water" | "earth" | "wind" | "light" | "dark";
+  mpCost?: number;
+}
+
 export interface ScrollableCardSectionProps {
   title: string;
-  items: CardItem[];
-  allLink: string;
+  items: BaseCardItem[];
   color: string;
+  allLink: string;
 }

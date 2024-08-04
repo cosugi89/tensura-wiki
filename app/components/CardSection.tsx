@@ -4,10 +4,8 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
 } from "@/components/ui/carousel";
-import { CardItem, ScrollableCardSectionProps } from "../types";
+import { BaseCardItem, ScrollableCardSectionProps } from "../types";
 import { cn } from "@/lib/utils";
 
 const ScrollableCardSection: React.FC<ScrollableCardSectionProps> = ({
@@ -16,17 +14,14 @@ const ScrollableCardSection: React.FC<ScrollableCardSectionProps> = ({
   allLink,
   color,
 }) => {
-  const pairedItems = items.reduce<CardItem[][]>(
-    (result, item, index, color) => {
-      if (index % 2 === 0) {
-        result.push([item]);
-      } else {
-        result[result.length - 1].push(item);
-      }
-      return result;
-    },
-    []
-  );
+  const pairedItems = items.reduce<BaseCardItem[][]>((result, item, index) => {
+    if (index % 2 === 0) {
+      result.push([item]);
+    } else {
+      result[result.length - 1].push(item);
+    }
+    return result;
+  }, []);
 
   return (
     <section className="my-6">
@@ -68,8 +63,6 @@ const ScrollableCardSection: React.FC<ScrollableCardSectionProps> = ({
             </CarouselItem>
           ))}
         </CarouselContent>
-        {/* <CarouselPrevious /> */}
-        {/* <CarouselNext /> */}
       </Carousel>
     </section>
   );
